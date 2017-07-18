@@ -10,9 +10,13 @@ PHP
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    [Using the starter applications](../../cfapps/starter_app_usage.html)
-    [Working with a proxy](../../manageapps/workingWithProxy.html)
-    [Using community buildpacks](../../cfapps/byob.html)
+    [Work with a proxy](../../manageapps/workingWithProxy.html)
+    [Enforce HTTPS on all pages](index.html#enforce_https)
+
+    {: .topicgroup}
+    Starter applications and buildpacks
+        [Use the starter applications](../../cfapps/starter_app_usage.html)
+        [Use community buildpacks](../../cfapps/byob.html)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
