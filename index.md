@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-06-20"
+lastupdated: "2017-07-17"
 
 ---
 
@@ -28,6 +28,17 @@ The php_buildpack is used in the following conditions:
 
 {{site.data.keyword.Bluemix}} provides a PHP starter app.  The PHP starter application is a simple PHP app that provides a template that you can use for your app. You can experiment with the starter app, and make and push changes to the {{site.data.keyword.Bluemix}}
 environment.  See [Using the starter applications](/docs/cfapps/starter_app_usage.html) for help with using the starter app.
+
+## Enforce HTTPS on all pages in your application
+{: #enforce_https}
+
+To enforce using HTTPS instead of HTTP on all pages in your application when running in Bluemix using Apache, the following changes need to be made to your ".htaccess" file.  This rule will apply to any request which was not made using HTTPS only when running in Bluemix.
+
+```
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https [NC]
+RewriteCond %{ENV:BLUEMIX_REGION} !^$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+```
 
 ## Runtime versions
 {: #runtime_versions}
